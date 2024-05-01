@@ -657,7 +657,7 @@ PUBLIC_KEY = "Your public key"
         for Example, if you want to mint 15 DAO coin, set coinsToBurn to hex(int(15*1e18))'''
 desoTrade = deso.Trade(publicKey=PUBLIC_KEY, seedHex=SEED_HEX)
 coinsToMint = 1000000
-coinsToBurnInRequiredFormat = hex(int(coinsToMint * 1e18))
-mintStatus = desoTrade.mintDAOCoins(coinsToBurnInRequiredFormat)
+coinsToMintInRequiredFormat = hex(int(coinsToMint * 1e18))
+mintStatus = desoTrade.mintDAOCoins(coinsToMintInRequiredFormat)
 print(mintStatus)
 ```
