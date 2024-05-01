@@ -65,9 +65,11 @@ class Identity:
         return seedPhrase
     # Credit to @Nathanwells on DeSo for this function
 
-    def getSeedHexFromSeedPhrase(seedPhrase):
-        '''Returns the seedHex of  a seedPhrase'''
+    # Credit to @10XChris on DeSo for accountNumber functionality
+    # Referenced from: https://github.com/deso-protocol/deso-offline-tool/blob/7e0e216ef8e134626751c80ecf0f5e9c5995db3c/src/ts/components/sign-form.ts#L388C21-L388C25
+    def getSeedHexFromSeedPhrase(seedPhrase, accountNumber=0):
+        '''Returns the seedHex of a seedPhrase and account number (optional)'''
         hdwallet = HDWallet(symbol=BTC)
         hdwallet.from_mnemonic(mnemonic=seedPhrase, passphrase=None)
-        hdwallet.from_path(path='m/44\'/0\'/0\'/0/0')
+        hdwallet.from_path(path='m/44\'/0\'/'+str(accountNumber)+'\'/0/0')
         return hdwallet.private_key()

@@ -288,12 +288,13 @@ print(desoPosts.getNFTBidsForNFTPost(postHashHex).json())
 
 To perform all the WRITE actions to DeSo Blockchain you need SEED_HEX and DESO Public Key.
 
-This is how you generate SEED_HEX using your 12 word mnemonic phrase.
+This is how you generate SEED_HEX using your 12 word mnemonic phrase and account number (optional).
 
 ```python
 from deso import Identity
 SEED_PHRASE = 'YOUR 12 WORD DESO SEED PHRASE'
-SEED_HEX = Identity.getSeedHexFromSeedPhrase(SEED_PHRASE)
+ACCOUNT_NUMBER = 0
+SEED_HEX = Identity.getSeedHexFromSeedPhrase(SEED_PHRASE, ACCOUNT_NUMBER)
 print(SEED_HEX)
 ```
 
