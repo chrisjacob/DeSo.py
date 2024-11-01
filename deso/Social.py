@@ -485,7 +485,7 @@ class Social:
         except Exception as e:
             raise Exception(error["error"])
 
-    def uploadToArweave(wallet, image):
+    def uploadToArweave(self, wallet, image):
         wallet = arweave.Wallet(wallet)
         with open(image, "rb", buffering=0) as file_handler:
             tx = Transaction(
